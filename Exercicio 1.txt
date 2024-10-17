@@ -1,0 +1,42 @@
+programa {
+  
+  funcao inicio() {
+    
+    inteiro vet[10], i, j, maiorIndice, temp
+
+    // Inicialização do vetor
+    vet[0] = 2
+    vet[1] = 5
+    vet[2] = 1
+    vet[3] = 3
+    vet[4] = 4
+    vet[5] = 9
+    vet[6] = 7
+    vet[7] = 8
+    vet[8] = 10
+    vet[9] = 6
+
+    // Algoritmo de ordenação por seleção
+    para (i = 0; i < 10; i++) {
+      maiorIndice = i
+      para (j = i + 1; j < 10; j++) {
+        se (vet[j] > vet[maiorIndice]) {
+          maiorIndice = j
+        }
+      }
+
+      // Troca
+      se (maiorIndice != i) {
+        temp = vet[i]
+        vet[i] = vet[maiorIndice]
+        vet[maiorIndice] = temp
+      }
+    }
+
+    // Saída do vetor ordenado
+    escreva("Vetor ordenado em ordem decrescente: ")
+    para (i = 0; i < 10; i++) {
+      escreva(vet[i], " ")
+    }
+  }
+}
